@@ -31,7 +31,7 @@ public class RandomSpout extends BaseRichSpout {
         this.collector = collector;
         list = new ArrayList<LogMessage>();
         list.add(new LogMessage(1,"http://www.itcast.cn/product?id=1002","http://www.itcast.cn/","maoxiangyi"));
-        list.add(new LogMessage(1,"http://www.itcast.cn/product?id=1002", "http://www.itcast.cn/","maoxiangyi"));
+        list.add(new LogMessage(1,"http://www.itcast.cn/product?id=1002", "http://www.itcast.cn/","usr"));
         list.add(new LogMessage(1, "http://www.itcast.cn/product?id=1002","http://www.itcast.cn/", "maoxiangyi"));
         LogMessage logMessage = new LogMessage(1,"http://www.itcast.cn/product?id=1003","http://www.baidu.com","maoxiangyi");
         logMessage.setAppName("ie7");

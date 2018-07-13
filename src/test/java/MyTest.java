@@ -28,4 +28,15 @@ public class MyTest {
             System.out.println(s);
         }
     }
+
+    @Test
+    public void tContain() {
+        String a = "aaa";
+        String b = "aaaw";
+        boolean contains = a.contains(b);
+        boolean contains1 = b.contains(a);
+        System.out.println(contains);
+        System.out.println(contains1);
+
+    }
 }

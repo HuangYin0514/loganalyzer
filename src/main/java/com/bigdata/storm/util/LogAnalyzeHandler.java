@@ -76,7 +76,7 @@ public class LogAnalyzeHandler {
                 //                 requestUrl        包含         value:http://www.jd.com
                 String fieldValueInLog = logMessage.getCompareFieldValue(jobDetail.getField());
                 //1:包含 2:等于 3：正则
-                if (jobDetail.getCompare() == 1 && fieldValueInLog.contains(jobDetail.getField())) {
+                if (jobDetail.getCompare() == 1 && fieldValueInLog.contains(jobDetail.getValue())) {
                     isMatch = true;
                 } else if (jobDetail.getCompare() == 2 && fieldValueInLog.equals(jobDetail.getValue())) {
                     isMatch = true;
@@ -110,7 +110,7 @@ public class LogAnalyzeHandler {
             for (LogAnalyzeJobDetail jobDetail : logAnalyzeJobDetailList) {
                 String fieldValueInLog = logMessage.getCompareFieldValue(jobDetail.getField());
                 //1:包含 2:等于 3：正则
-                if (jobDetail.getCompare() == 1 && fieldValueInLog.contains(jobDetail.getField())) {
+                if (jobDetail.getCompare() == 1 && fieldValueInLog.contains(jobDetail.getValue())) {
                     isMatch = true;
                 } else if (jobDetail.getCompare() == 2 && fieldValueInLog.equals(jobDetail.getValue())) {
                     isMatch = true;

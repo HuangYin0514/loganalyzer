@@ -5,6 +5,7 @@ import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.topology.base.BaseBasicBolt;
 import backtype.storm.tuple.Tuple;
 import com.bigdata.storm.domain.LogMessage;
+import com.bigdata.storm.util.LogAnalyzeHandler;
 
 import javax.sound.midi.Soundbank;
 
@@ -16,13 +17,18 @@ import javax.sound.midi.Soundbank;
  */
 public class ProcessMessage extends BaseBasicBolt {
 
+    /**
+     * 如果message符合之前输入的分析日志规则，那么存储到redis中。
+     * 在redis中
+     *      pv 用String类型
+     *      uv 用set类型  插入方法为sadd
+     *
+     * @param tuple
+     * @param basicOutputCollector
+     */
     public void execute(Tuple tuple, BasicOutputCollector basicOutputCollector) {
         LogMessage message = (LogMessage) tuple.getValueByField("message");
-        Integer type = tuple.getIntegerByField("type");
-        System.out.println("=========================================");
-        System.out.println("message :" + message);
-        System.out.println("type:" + type);
-        System.out.println("=========================================");
+        LogAnalyzeHandler.process(message);
     }
 
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {

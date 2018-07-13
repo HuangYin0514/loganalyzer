@@ -23,6 +23,11 @@ import java.util.Map;
 public class MessageFilterBolt extends BaseBasicBolt {
 
 
+    /**
+     * 对日志信息进行验证， 如果符合 待分析的日志 格式， 择向下发送
+     * @param input
+     * @param collector
+     */
     public void execute(Tuple input, BasicOutputCollector collector) {
         String line = input.getString(0);
         //2、对数据进行解析
