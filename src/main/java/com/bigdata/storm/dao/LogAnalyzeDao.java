@@ -22,6 +22,7 @@ public class LogAnalyzeDao {
     private JdbcTemplate jdbcTemplate;
 
     public LogAnalyzeDao() {
+        jdbcTemplate = new JdbcTemplate(DataSourceUtil.getDataSource());
     }
 
     public List<LogAnalyzeJob> loadJobList() {
@@ -79,7 +80,6 @@ public class LogAnalyzeDao {
                 " WHERE  executeTime BETWEEN  '" + startTime + "' AND '" +endTime+"' "+
                 " GROUP BY indexName";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<BaseRecord>(BaseRecord.class));
-
     }
 
 

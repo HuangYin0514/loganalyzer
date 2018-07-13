@@ -178,7 +178,7 @@ public class LogAnalyzeHandler {
      * @param jobType
      * @return
      */
-    private static boolean isValidType(int jobType) {
+    public static boolean isValidType(int jobType) {
         if (jobType == LogTypeConstant.BUY || jobType == LogTypeConstant.CLICK || jobType == LogTypeConstant.SEARCH || jobType == LogTypeConstant.VIEW) {
             return true;
         }
