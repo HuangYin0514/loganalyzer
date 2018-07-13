@@ -41,9 +41,9 @@ public class LogMessage implements Serializable {
             return referrerUrl;
         } else if ("requestUrl".equalsIgnoreCase(field)) {
             return requestUrl;
-        }else if ("appName".equalsIgnoreCase(field)){
+        } else if ("appName".equalsIgnoreCase(field)) {
             return appName;
-        }else if ("platform".equalsIgnoreCase(field)){
+        } else if ("platform".equalsIgnoreCase(field)) {
             return platform;
         }
         return "";
