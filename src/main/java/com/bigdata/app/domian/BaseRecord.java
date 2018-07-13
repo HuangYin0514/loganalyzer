@@ -1,7 +1,9 @@
 package com.bigdata.app.domian;
 
 import lombok.Data;
+import lombok.extern.java.Log;
 
+import java.lang.annotation.Annotation;
 import java.util.Date;
 
 /**
@@ -18,8 +20,8 @@ public class BaseRecord {
     private long uv;
     private Date processTime;
 
-    public BaseRecord(String indexName, int pv, long uv, Date processTime) {
-        this.indexName = indexName;
+    public BaseRecord(String jobName, int pv, long uv, Date processTime) {
+        this.indexName = jobName;
         this.pv = pv;
         this.uv = uv;
         this.processTime = processTime;
