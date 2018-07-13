@@ -17,7 +17,8 @@ public class ReportDataWorker {
     public static void main(String[] args) {
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(10);
         //计算每分钟的增量数据，并将增量数据保存到mysql数据库中
-        scheduledExecutorService.scheduleAtFixedRate(new OneMinuteCallBack(), 0, 60, TimeUnit.SECONDS);
+        //第三个参数period是时间间隔 单位是m
+        scheduledExecutorService.scheduleAtFixedRate(new OneMinuteCallBack(), 0, 5, TimeUnit.SECONDS);
         //计算每半个小时的增量数据，并将增量数据保存到mysql数据库中
         //scheduledExecutorService.scheduleAtFixedRate(new HalfAppendCallBack(), 0, 60, TimeUnit.SECONDS);
         //计算每小时的增量数据，并将增量数据保存到mysql数据库中
